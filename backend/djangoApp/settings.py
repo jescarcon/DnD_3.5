@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'users',
     'enemies',
     'corsheaders',
+    'characters',
 ]
 
 MIDDLEWARE = [
