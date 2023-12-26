@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Character, LoreEntry
+from .models import Character, LoreEntry, Statistics, Habilities, Items
 
 class CharacterSerializer(serializers.ModelSerializer):
     class Meta:
@@ -22,3 +22,18 @@ class LoreEntrySerializer(serializers.ModelSerializer):
         if value == '':
             raise serializers.ValidationError("Title must not be empty")
         return value
+
+class ItemSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Items
+        fields = '__all__'
+
+class StatisticsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Statistics
+        fields = '__all__'
+
+class HabilitiesSerializer(serializers.ModelSerializer):    
+    class Meta:
+        model = Habilities
+        fields = '__all__'
