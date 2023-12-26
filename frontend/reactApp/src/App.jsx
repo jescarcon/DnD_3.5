@@ -2,9 +2,11 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import DataVisualization from './components/DataVisualization'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [showDataVisualization, setShowDataVisualization] = useState(false)
 
   return (
     <>
@@ -25,6 +27,14 @@ function App() {
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
       </div>
+      
+      {/* Button to toggle the DataVisualization component */}
+      <button onClick={() => setShowDataVisualization(!showDataVisualization)}>
+        {showDataVisualization ? "Hide" : "Show"} Data Visualization
+      </button>
+      {/* Conditional rendering */}
+      {showDataVisualization && <DataVisualization />}
+
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
